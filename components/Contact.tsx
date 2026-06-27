@@ -19,7 +19,7 @@ export default function Contact() {
       await emailjs.send(
         "service_8u5z7tl",
         "template_fv2iekk",
-        { from_name: form.name, from_email: form.email, message: form.message },
+        { name: form.name, email: form.email, message: form.message },
         "A0CxNbRoJyTAfEUev"
       );
       setSent(true);
