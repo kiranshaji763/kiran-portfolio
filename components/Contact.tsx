@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -77,46 +79,31 @@ export default function Contact() {
           </form>
         )}
 
-        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-6 sm:gap-8 font-mono text-xs text-gray-600 tracking-widest">
+        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-6 sm:gap-8">
           <a
             href="mailto:kiranshaji763@gmail.com"
-            className="hover:text-[#00ff88] transition"
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.textShadow = "0 0 8px #00ff88")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.textShadow = "none")
-            }
+            className="flex flex-col items-center gap-2 text-gray-600 hover:text-[#00ff88] transition group"
           >
-            EMAIL
+            <MdEmail className="text-3xl sm:text-4xl group-hover:drop-shadow-[0_0_8px_#00ff88]" />
+            <span className="font-mono text-xs tracking-widest">EMAIL</span>
           </a>
           <a
             href="https://github.com/kiranshaji763"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#00ff88] transition"
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.textShadow = "0 0 8px #00ff88")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.textShadow = "none")
-            }
+            className="flex flex-col items-center gap-2 text-gray-600 hover:text-[#00ff88] transition group"
           >
-            GITHUB
+            <FaGithub className="text-3xl sm:text-4xl group-hover:drop-shadow-[0_0_8px_#00ff88]" />
+            <span className="font-mono text-xs tracking-widest">GITHUB</span>
           </a>
           <a
             href="https://www.linkedin.com/in/kiran-shaji-590936272/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#00ff88] transition"
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.textShadow = "0 0 8px #00ff88")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.textShadow = "none")
-            }
+            className="flex flex-col items-center gap-2 text-gray-600 hover:text-[#00ff88] transition group"
           >
-            LINKEDIN
+            <FaLinkedin className="text-3xl sm:text-4xl group-hover:drop-shadow-[0_0_8px_#00ff88]" />
+            <span className="font-mono text-xs tracking-widest">LINKEDIN</span>
           </a>
         </div>
 
