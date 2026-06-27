@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import AnimateIn from "@/components/AnimateIn";
 
@@ -107,6 +107,24 @@ export default function Contact() {
           >
             <FaLinkedin className="text-3xl sm:text-4xl group-hover:drop-shadow-[0_0_8px_#00ff88]" />
             <span className="font-mono text-xs tracking-widest">LINKEDIN</span>
+          </a>
+          <a
+            href="https://wa.me/919633995810"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 text-gray-600 hover:text-[#00ff88] transition group"
+          >
+            <FaWhatsapp className="text-3xl sm:text-4xl group-hover:drop-shadow-[0_0_8px_#00ff88]" />
+            <span className="font-mono text-xs tracking-widest">WHATSAPP</span>
+          </a>
+          <a
+            href="https://www.instagram.com/dark__apocalypse"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 text-gray-600 hover:text-[#00ff88] transition group"
+          >
+            <FaInstagram className="text-3xl sm:text-4xl group-hover:drop-shadow-[0_0_8px_#00ff88]" />
+            <span className="font-mono text-xs tracking-widest">INSTAGRAM</span>
           </a>
         </div>
 
