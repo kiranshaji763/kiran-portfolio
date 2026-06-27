@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   const stats = [
     { label: "LEVEL", value: "99" },
@@ -20,10 +22,15 @@ export default function About() {
           <div className="flex flex-col items-center gap-6">
             <div className="relative">
               <div
-                className="w-36 h-36 sm:w-48 sm:h-48 border-2 border-[#00ff88] flex items-center justify-center text-5xl sm:text-6xl bg-[#050510]"
+                className="w-36 h-36 sm:w-48 sm:h-48 border-2 border-[#00ff88] overflow-hidden bg-[#050510] relative"
                 style={{ boxShadow: "0 0 30px #00ff8844, inset 0 0 30px #00ff8811" }}
               >
-                👾
+                <Image
+                  src="/profile.jpg"
+                  alt="Kiran Shaji P P"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
               <div className="absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-[#00e5ff]" />
               <div className="absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-[#00e5ff]" />
