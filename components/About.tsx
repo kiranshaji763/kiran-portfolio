@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnimateIn from "@/components/AnimateIn";
 
 export default function About() {
   const stats = [
@@ -19,6 +20,8 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 sm:gap-12 items-center">
+
+          <AnimateIn direction="left">
           <div className="flex flex-col items-center gap-6">
             <div className="relative">
               <div
@@ -50,7 +53,9 @@ export default function About() {
               ))}
             </div>
           </div>
+          </AnimateIn>
 
+          <AnimateIn direction="right" delay={0.2}>
           <div className="space-y-4 font-mono">
             <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
               <span className="text-[#00ff88]">&gt;</span> I&apos;m{" "}
@@ -98,6 +103,7 @@ export default function About() {
               &gt; INIT_CONTACT
             </a>
           </div>
+          </AnimateIn>
         </div>
       </div>
     </section>

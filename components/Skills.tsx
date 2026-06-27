@@ -1,3 +1,5 @@
+import AnimateIn from "@/components/AnimateIn";
+
 const skillGroups = [
   {
     category: "FLUTTER & DART",
@@ -50,7 +52,8 @@ export default function Skills() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {skillGroups.map((group) => (
+          {skillGroups.map((group, i) => (
+            <AnimateIn key={group.category} direction="up" delay={i * 0.15}>
             <div
               key={group.category}
               className="border border-[#00ff88]/20 bg-[#050510] p-5 sm:p-6"
@@ -88,6 +91,7 @@ export default function Skills() {
                 ))}
               </div>
             </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

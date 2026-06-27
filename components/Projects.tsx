@@ -1,4 +1,5 @@
 "use client";
+import AnimateIn from "@/components/AnimateIn";
 
 const projects = [
   {
@@ -43,7 +44,8 @@ export default function Projects() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
+            <AnimateIn key={p.id} direction="up" delay={i * 0.15}>
             <div
               key={p.id}
               className="relative border border-[#00ff88]/20 bg-[#050510] p-5 sm:p-6 group hover:border-[#00ff88]/60 transition-all duration-300"
@@ -93,6 +95,7 @@ export default function Projects() {
                 ))}
               </div>
             </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import AnimateIn from "@/components/AnimateIn";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -26,6 +27,7 @@ export default function Contact() {
           &gt; SEND_MESSAGE / INIT_COLLAB
         </p>
 
+        <AnimateIn direction="up">
         {sent ? (
           <div className="text-center py-16 border border-[#00ff88]/30 bg-[#00ff88]/5">
             <div className="text-5xl mb-4">🎮</div>
@@ -79,6 +81,7 @@ export default function Contact() {
           </form>
         )}
 
+        </AnimateIn>
         <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-6 sm:gap-8">
           <a
             href="mailto:kiranshaji763@gmail.com"
