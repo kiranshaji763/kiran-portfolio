@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050510;
+  --foreground: #e0e0ff;
+  --neon-green: #00ff88;
+  --neon-cyan: #00e5ff;
+  --neon-purple: #bf00ff;
 }
 
 @theme inline {
@@ -12,15 +15,67 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.neon-text-green {
+  color: #00ff88;
+  text-shadow: 0 0 8px #00ff88, 0 0 20px #00ff88aa;
+}
+
+.neon-text-cyan {
+  color: #00e5ff;
+  text-shadow: 0 0 8px #00e5ff, 0 0 20px #00e5ffaa;
+}
+
+.neon-border {
+  border-color: #00ff88;
+  box-shadow: 0 0 8px #00ff8844, inset 0 0 8px #00ff8811;
+}
+
+.neon-border:hover {
+  box-shadow: 0 0 16px #00ff8888, inset 0 0 12px #00ff8822;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+  pointer-events: none;
+}
+
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.85; }
+  97% { opacity: 1; }
+  98% { opacity: 0.9; }
+}
+
+@keyframes pulse-neon {
+  0%, 100% { text-shadow: 0 0 8px #00ff88, 0 0 20px #00ff88aa; }
+  50% { text-shadow: 0 0 16px #00ff88, 0 0 40px #00ff88cc, 0 0 60px #00ff8844; }
+}
+
+.animate-flicker { animation: flicker 4s infinite; }
+.animate-pulse-neon { animation: pulse-neon 2s ease-in-out infinite; }
