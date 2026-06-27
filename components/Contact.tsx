@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import AnimateIn from "@/components/AnimateIn";
@@ -7,10 +8,26 @@ import AnimateIn from "@/components/AnimateIn";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSending(true);
+    setError("");
+    try {
+      await emailjs.send(
+        "service_8u5z7tl",
+        "template_fv2iekk",
+        { from_name: form.name, from_email: form.email, message: form.message },
+        "A0CxNbRoJyTAfEUev"
+      );
+      setSent(true);
+    } catch {
+      setError("Failed to send. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -73,11 +90,13 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full py-3 sm:py-4 font-black font-mono tracking-widest text-xs sm:text-sm uppercase border-2 border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88] hover:text-black transition-all duration-200"
+              disabled={sending}
+              className="w-full py-3 sm:py-4 font-black font-mono tracking-widest text-xs sm:text-sm uppercase border-2 border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88] hover:text-black transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               style={{ boxShadow: "0 0 16px #00ff8844" }}
             >
-              [ TRANSMIT_MESSAGE ]
+              {sending ? "[ TRANSMITTING... ]" : "[ TRANSMIT_MESSAGE ]"}
             </button>
+            {error && <p className="text-red-400 font-mono text-xs text-center">{error}</p>}
           </form>
         )}
 
