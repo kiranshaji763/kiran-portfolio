@@ -69,6 +69,13 @@ export default function Hero() {
           >
             [ CONTACT ]
           </a>
+          <a
+            href="/Kiran_Shaji_CV.docx"
+            download
+            className="px-6 sm:px-8 py-3 font-mono font-bold tracking-widest uppercase text-xs sm:text-sm border-2 border-[#bf00ff]/50 text-[#bf00ff]/70 hover:border-[#bf00ff] hover:text-[#bf00ff] transition-all duration-200"
+          >
+            [ DOWNLOAD CV ]
+          </a>
         </div>
 
         <p className="mt-10 sm:mt-12 font-mono text-xs text-gray-600 tracking-widest">
