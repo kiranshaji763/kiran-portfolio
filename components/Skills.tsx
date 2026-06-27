@@ -39,33 +39,33 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 relative grid-bg">
+    <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6 relative grid-bg">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4 mb-12 justify-center">
+        <div className="flex items-center gap-4 mb-10 sm:mb-12 justify-center">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#00ff88]/50" />
-          <h2 className="text-3xl font-black font-mono tracking-widest neon-text-green">
+          <h2 className="text-2xl sm:text-3xl font-black font-mono tracking-widest neon-text-green">
             // SKILL_TREE
           </h2>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#00ff88]/50" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {skillGroups.map((group) => (
             <div
               key={group.category}
-              className="border border-[#00ff88]/20 bg-[#050510] p-6"
+              className="border border-[#00ff88]/20 bg-[#050510] p-5 sm:p-6"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl">{group.icon}</span>
+              <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                <span className="text-xl sm:text-2xl">{group.icon}</span>
                 <h3
-                  className="font-black font-mono tracking-widest text-sm"
+                  className="font-black font-mono tracking-widest text-xs sm:text-sm"
                   style={{ color: group.color, textShadow: `0 0 8px ${group.color}88` }}
                 >
                   {group.category}
                 </h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {group.skills.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">

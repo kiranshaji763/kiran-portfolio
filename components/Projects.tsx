@@ -32,24 +32,21 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 bg-[#07071a] relative">
+    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#07071a] relative">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4 mb-12 justify-center">
+        <div className="flex items-center gap-4 mb-10 sm:mb-12 justify-center">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#00ff88]/50" />
-          <h2 className="text-3xl font-black font-mono tracking-widest neon-text-green">
+          <h2 className="text-2xl sm:text-3xl font-black font-mono tracking-widest neon-text-green">
             // PROJECTS
           </h2>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#00ff88]/50" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((p) => (
             <div
               key={p.id}
-              className="relative border border-[#00ff88]/20 bg-[#050510] p-6 group hover:border-[#00ff88]/60 transition-all duration-300"
-              style={{
-                boxShadow: "none",
-              }}
+              className="relative border border-[#00ff88]/20 bg-[#050510] p-5 sm:p-6 group hover:border-[#00ff88]/60 transition-all duration-300"
               onMouseEnter={(e) =>
                 ((e.currentTarget as HTMLElement).style.boxShadow = `0 0 20px ${p.color}22`)
               }
@@ -78,10 +75,10 @@ export default function Projects() {
                 </span>
               </div>
 
-              <h3 className="text-lg font-black mb-3 text-white group-hover:text-[#00ff88] transition-colors font-mono tracking-wide">
+              <h3 className="text-base sm:text-lg font-black mb-3 text-white group-hover:text-[#00ff88] transition-colors font-mono tracking-wide">
                 {p.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-5 leading-relaxed font-mono">
+              <p className="text-gray-500 text-xs sm:text-sm mb-5 leading-relaxed font-mono">
                 {p.description}
               </p>
 

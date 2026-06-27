@@ -11,16 +11,16 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-[#07071a] relative">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#07071a] relative">
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center gap-4 mb-4 justify-center">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#00ff88]/50" />
-          <h2 className="text-3xl font-black font-mono tracking-widest neon-text-green">
+          <h2 className="text-2xl sm:text-3xl font-black font-mono tracking-widest neon-text-green">
             // CONTACT
           </h2>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#00ff88]/50" />
         </div>
-        <p className="text-center font-mono text-gray-500 text-sm tracking-widest mb-12">
+        <p className="text-center font-mono text-gray-500 text-xs sm:text-sm tracking-widest mb-10 sm:mb-12">
           &gt; SEND_MESSAGE / INIT_COLLAB
         </p>
 
@@ -50,26 +50,26 @@ export default function Contact() {
                   required
                   value={form[field]}
                   onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-                  className="w-full pl-8 pr-5 py-4 bg-[#050510] border border-[#00ff88]/20 text-white font-mono text-sm placeholder-gray-600 focus:outline-none focus:border-[#00ff88] transition tracking-widest"
+                  className="w-full pl-8 pr-5 py-3 sm:py-4 bg-[#050510] border border-[#00ff88]/20 text-white font-mono text-sm placeholder-gray-600 focus:outline-none focus:border-[#00ff88] transition tracking-widest"
                   style={{ caretColor: "#00ff88" }}
                 />
               </div>
             ))}
             <div className="relative">
-              <span className="absolute left-4 top-5 font-mono text-xs text-[#00ff88]/60">&gt;</span>
+              <span className="absolute left-4 top-4 font-mono text-xs text-[#00ff88]/60">&gt;</span>
               <textarea
                 rows={5}
                 placeholder="YOUR_MESSAGE..."
                 required
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full pl-8 pr-5 py-4 bg-[#050510] border border-[#00ff88]/20 text-white font-mono text-sm placeholder-gray-600 focus:outline-none focus:border-[#00ff88] transition resize-none tracking-widest"
+                className="w-full pl-8 pr-5 py-3 sm:py-4 bg-[#050510] border border-[#00ff88]/20 text-white font-mono text-sm placeholder-gray-600 focus:outline-none focus:border-[#00ff88] transition resize-none tracking-widest"
                 style={{ caretColor: "#00ff88" }}
               />
             </div>
             <button
               type="submit"
-              className="w-full py-4 font-black font-mono tracking-widest text-sm uppercase border-2 border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88] hover:text-black transition-all duration-200"
+              className="w-full py-3 sm:py-4 font-black font-mono tracking-widest text-xs sm:text-sm uppercase border-2 border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88] hover:text-black transition-all duration-200"
               style={{ boxShadow: "0 0 16px #00ff8844" }}
             >
               [ TRANSMIT_MESSAGE ]
@@ -77,11 +77,10 @@ export default function Contact() {
           </form>
         )}
 
-        <div className="mt-12 flex justify-center gap-8 font-mono text-xs text-gray-600 tracking-widest">
+        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-6 sm:gap-8 font-mono text-xs text-gray-600 tracking-widest">
           <a
             href="mailto:kiranshaji763@gmail.com"
             className="hover:text-[#00ff88] transition"
-            style={{ textShadow: "none" }}
             onMouseEnter={(e) =>
               ((e.target as HTMLElement).style.textShadow = "0 0 8px #00ff88")
             }
@@ -121,7 +120,7 @@ export default function Contact() {
           </a>
         </div>
 
-        <p className="text-center font-mono text-xs text-gray-700 tracking-widest mt-8">
+        <p className="text-center font-mono text-xs text-gray-700 tracking-widest mt-6 sm:mt-8">
           © 2026 KIRAN_SHAJI_PP // ALL RIGHTS RESERVED
         </p>
       </div>
